@@ -1,0 +1,27 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.vs/
+backend/AmazonBookProject.API/.vs/AmazonBookProject.API/FileContentIndex/1a1f6577-e1ed-437c-bfcd-d8dd591d9638.vsidx
+C:/Users/shelt/Desktop/Winter 2025/IS 413/Full Stack/Mission11Assignment/backend/AmazonBookProject.API/.vs
