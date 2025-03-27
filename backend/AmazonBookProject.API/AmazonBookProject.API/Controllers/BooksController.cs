@@ -16,34 +16,36 @@ namespace AmazonBookProject.API.Controllers
         }
 
         [HttpGet("AllBooks")]
-        public IActionResult GetBooks(int pageSize = 10, int pageNum = 1, bool sortByTitle = false) // the three values being passed into by the request
+        public IActionResult GetBooks(
+            int pageSize = 10,
+            int pageNum = 1,
+            bool sortByTitle = false,
+            [FromQuery] string[] bookCategory = null // Accept categories as query parameters
+        )
         {
-            string? favProjType = Request.Cookies["FavoriteProjectType"];  // creating a cookie
-            Console.WriteLine("~~~~~COOKIE~~~~~\n" + favProjType);
-
-            HttpContext.Response.Cookies.Append("FavoriteProjectType", "Borehole Well and Hand Pump", new CookieOptions
-            {
-                HttpOnly = true,
-                Secure = true,
-                SameSite = SameSiteMode.None,
-                Expires = DateTime.Now.AddMinutes(1),
-            }); //configuring the cookie
-
             var query = _booksContext.Books.AsQueryable();
 
-            if (sortByTitle) // this is the order by statement that we will apply if sorByTital is True
+            // Apply category filtering if categories are provided
+            if (bookCategory != null && bookCategory.Length > 0)
+            {
+                query = query.Where(b => bookCategory.Contains(b.Category));
+            }
+
+            // Apply sorting by title if requested
+            if (sortByTitle)
             {
                 query = query.OrderBy(b => b.Title);
             }
 
-            var books = query // setting up the pagination logic
+            // Apply pagination logic
+            var books = query
                 .Skip((pageNum - 1) * pageSize)
                 .Take(pageSize)
                 .ToList();
 
-            var totalNumBooks = _booksContext.Books.Count(); 
+            var totalNumBooks = query.Count(); // Use filtered query for accurate count
 
-            var response = new // We are returning 2 fields in the json, this is how it is configured
+            var response = new
             {
                 Books = books,
                 TotalNumBooks = totalNumBooks
@@ -51,5 +53,16 @@ namespace AmazonBookProject.API.Controllers
 
             return Ok(response);
         }
+
+        [HttpGet("GetBookCategories")]
+        public IActionResult GetBookCategories()
+        {
+            var bookCategories = _booksContext.Books
+                .Select(p => p.Category)
+                .Distinct()
+                .ToList();
+            return Ok(bookCategories);
+        }
+        
     }
 }

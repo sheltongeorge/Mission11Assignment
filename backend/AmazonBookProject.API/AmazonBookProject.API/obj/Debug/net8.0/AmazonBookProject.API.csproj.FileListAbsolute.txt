@@ -68,3 +68,4 @@ C:\Users\shelt\Desktop\Winter 2025\IS 413\Full Stack\Mission11Assignment\backend
 C:\Users\shelt\Desktop\Winter 2025\IS 413\Full Stack\Mission11Assignment\backend\AmazonBookProject.API\AmazonBookProject.API\obj\Debug\net8.0\AmazonBookProject.API.pdb
 C:\Users\shelt\Desktop\Winter 2025\IS 413\Full Stack\Mission11Assignment\backend\AmazonBookProject.API\AmazonBookProject.API\obj\Debug\net8.0\AmazonBookProject.API.genruntimeconfig.cache
 C:\Users\shelt\Desktop\Winter 2025\IS 413\Full Stack\Mission11Assignment\backend\AmazonBookProject.API\AmazonBookProject.API\obj\Debug\net8.0\ref\AmazonBookProject.API.dll
+C:\Users\shelt\Desktop\Winter 2025\IS 413\Full Stack\Mission11Assignment\backend\amazonbookproject.api\amazonbookproject.api\obj\Debug\net8.0\AmazonBookProject.API.sourcelink.json
