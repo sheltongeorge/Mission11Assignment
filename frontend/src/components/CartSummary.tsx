@@ -28,7 +28,7 @@ const CartSummary = () => {
       onClick={() => navigate('/cart')}
     >
       🛒 <strong>{totalQuantity} {totalQuantity === 1 ? 'item' : 'items'}</strong> | ${totalPrice.toFixed(2)}
-    </div>
+    </div> // displaying the quantity of items as well as total price of cart
   );
 };
 

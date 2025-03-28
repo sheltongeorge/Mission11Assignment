@@ -16,7 +16,7 @@ function App() {
             <Route path="/" element={<BooksPage />} />
             <Route path="/books" element={<BooksPage />} />
             <Route
-                path="/buy/:title/:price/:bookId"
+                path="/buy/:title/:price/:bookId"   // need to pass all this in in the route.
                 element={<BuyPage />}
               />
             <Route path="/cart" element={<CartPage />} />
