@@ -7,7 +7,7 @@ function BookList({ selectedCategories }: { selectedCategories: string[] }) {
   const [books, setBooks] = useState<Book[]>([]); // Stores the list of books fetched from the API
   const [pageSize, setPageSize] = useState<number>(10); // Determines the number of books displayed per page
   const [pageNum, setPageNum] = useState<number>(1); // Tracks the current page number
-  const [totalItems, setTotalItems] = useState<number>(0); // Holds the total number of books retrieved from the API
+  // const [totalItems, setTotalItems] = useState<number>(0); // Holds the total number of books retrieved from the API
   const [totalPages, setTotalPages] = useState<number>(0); // Calculates the total pages based on the number of items and page size
   const navigate = useNavigate(); // React Router hook for navigation to other pages
 
@@ -32,7 +32,7 @@ function BookList({ selectedCategories }: { selectedCategories: string[] }) {
       // Parse the JSON response and update state variables
       const data = await response.json();
       setBooks(data.books); // Update the list of books with the API response
-      setTotalItems(data.totalNumBooks); // Update the total number of books available
+      // setTotalItems(data.totalNumBooks); // Update the total number of books available
       setTotalPages(Math.ceil(data.totalNumBooks / pageSize)); // Calculate the total pages required for pagination
     };
 
