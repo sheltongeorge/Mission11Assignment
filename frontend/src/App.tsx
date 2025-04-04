@@ -6,6 +6,7 @@ import BooksPage from './pages/BooksPage';
 import BuyPage from './pages/BuyPage';
 import { CartProvider } from './context/CartContext';
 import CartPage from './pages/CartPage';
+import AdminBooksPage from './pages/AdminBooksPage';
 
 function App() {
   return (
@@ -16,10 +17,11 @@ function App() {
             <Route path="/" element={<BooksPage />} />
             <Route path="/books" element={<BooksPage />} />
             <Route
-                path="/buy/:title/:price/:bookId"   // need to pass all this in in the route.
-                element={<BuyPage />}
-              />
+              path="/buy/:title/:price/:bookId" // need to pass all this in in the route.
+              element={<BuyPage />}
+            />
             <Route path="/cart" element={<CartPage />} />
+            <Route path="/adminbooks" element={<AdminBooksPage />} />
           </Routes>
         </Router>
       </CartProvider>
