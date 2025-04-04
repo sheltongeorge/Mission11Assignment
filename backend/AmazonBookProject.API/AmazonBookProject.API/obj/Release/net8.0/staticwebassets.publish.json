@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "0TDmkD/JMFWMBvaG6YsRRSWlzXBJrVvUBjC7ZGAjepc=",
+  "Source": "AmazonBookProject.API",
+  "BasePath": "_content/AmazonBookProject.API",
+  "Mode": "Default",
+  "ManifestType": "Publish",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

@@ -21,7 +21,7 @@ function BookList({ selectedCategories }: { selectedCategories: string[] }) {
 
       // Build the API URL with pagination and filtering parameters
       const response = await fetch(
-        `https://localhost:5000/Books/AllBooks?pageSize=${pageSize}&pageNum=${pageNum}${
+        `https://bookproject-shelton-backend-fjfyhnbsffhtd2cw.eastus-01.azurewebsites.net/books/allbooks?pageSize=${pageSize}&pageNum=${pageNum}${
           selectedCategories.length ? `&${categoryParams}` : ''
         }`,
         {

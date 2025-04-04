@@ -19,7 +19,7 @@ function AdminBooksPage() {
 
   const fetchBooks = async () => {
     const res = await fetch(
-      'https://localhost:5000/Books/AllBooks?pageSize=1000',
+      'https://bookproject-shelton-backend-fjfyhnbsffhtd2cw.eastus-01.azurewebsites.net/books/allbooks?pageSize=1000',
       {
         credentials: 'include',
       }
@@ -43,7 +43,7 @@ function AdminBooksPage() {
 
   const handleSave = async () => {
     await fetch(
-      `https://localhost:5000/Books/UpdateBook/${editingBook?.bookId}`,
+      `https://bookproject-shelton-backend-fjfyhnbsffhtd2cw.eastus-01.azurewebsites.net/books/UpdateBook/${editingBook?.bookId}`,
       {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
@@ -55,14 +55,14 @@ function AdminBooksPage() {
   };
 
   const handleDelete = async (bookId: number) => {
-    await fetch(`https://localhost:5000/Books/DeleteBook/${bookId}`, {
+    await fetch(`https://bookproject-shelton-backend-fjfyhnbsffhtd2cw.eastus-01.azurewebsites.net/books/DeleteBook/${bookId}`, {
       method: 'DELETE',
     });
     fetchBooks();
   };
 
   const handleAddBook = async () => {
-    await fetch('https://localhost:5000/Books/AddBook', {
+    await fetch('https://bookproject-shelton-backend-fjfyhnbsffhtd2cw.eastus-01.azurewebsites.net/books/AddBook', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(newBook),

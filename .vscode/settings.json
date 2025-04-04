@@ -1,0 +1,4 @@
+{
+  "appService.defaultWebAppToDeploy": "undefined/subscriptions/c19fe152-ede0-4f73-a300-ce9117334ee0/resourceGroups/appsvc_windows_eastus/providers/Microsoft.Web/sites/BookProject-Shelton-Backend",
+  "appService.deploySubpath": "backend\\AmazonBookProject.API\\AmazonBookProject.API\\publish"
+}
