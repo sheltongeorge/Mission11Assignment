@@ -18,8 +18,7 @@ builder.Services.AddCors(options => // setting the port that we want to allow re
     options.AddPolicy("AllowFrontend",
         policy =>
         {
-            policy.WithOrigins("http://localhost:3000")
-            .AllowCredentials()
+            policy.WithOrigins("http://localhost:3000", "https://icy-coast-0dbc4c91e.6.azurestaticapps.net")
             .AllowAnyHeader()
             .AllowAnyMethod();
         });
